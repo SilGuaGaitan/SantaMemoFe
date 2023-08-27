@@ -1,0 +1,255 @@
+{
+  "frames": {
+    "monzon.jpg": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 800,
+        "h": 800
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 800,
+        "h": 800
+      },
+      "sourceSize": {
+        "w": 800,
+        "h": 800
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "cerveceria.jpg": {
+      "frame": {
+        "x": 806,
+        "y": 2,
+        "w": 700,
+        "h": 525
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 700,
+        "h": 525
+      },
+      "sourceSize": {
+        "w": 700,
+        "h": 525
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "costanera-paseo.jpg": {
+      "frame": {
+        "x": 2,
+        "y": 806,
+        "w": 700,
+        "h": 525
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 700,
+        "h": 525
+      },
+      "sourceSize": {
+        "w": 700,
+        "h": 525
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "dique1.jpg": {
+      "frame": {
+        "x": 706,
+        "y": 806,
+        "w": 700,
+        "h": 525
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 700,
+        "h": 525
+      },
+      "sourceSize": {
+        "w": 700,
+        "h": 525
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "parador.jpg": {
+      "frame": {
+        "x": 1335,
+        "y": 2,
+        "w": 700,
+        "h": 525
+      },
+      "rotated": true,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 700,
+        "h": 525
+      },
+      "sourceSize": {
+        "w": 700,
+        "h": 525
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "liso.jpg": {
+      "frame": {
+        "x": 2,
+        "y": 1335,
+        "w": 514,
+        "h": 514
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 514,
+        "h": 514
+      },
+      "sourceSize": {
+        "w": 514,
+        "h": 514
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "basilica.jpg": {
+      "frame": {
+        "x": 1410,
+        "y": 706,
+        "w": 431,
+        "h": 431
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 431,
+        "h": 431
+      },
+      "sourceSize": {
+        "w": 431,
+        "h": 431
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bichofeo.jpg": {
+      "frame": {
+        "x": 1410,
+        "y": 1141,
+        "w": 428,
+        "h": 428
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 428,
+        "h": 428
+      },
+      "sourceSize": {
+        "w": 428,
+        "h": 428
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "carpincho.jpg": {
+      "frame": {
+        "x": 520,
+        "y": 1335,
+        "w": 380,
+        "h": 380
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 380,
+        "h": 380
+      },
+      "sourceSize": {
+        "w": 380,
+        "h": 380
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "redonda.png": {
+      "frame": {
+        "x": 904,
+        "y": 1335,
+        "w": 295,
+        "h": 295
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 295,
+        "h": 295
+      },
+      "sourceSize": {
+        "w": 295,
+        "h": 295
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.7",
+    "image": "texture-1.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1862,
+      "h": 1851
+    },
+    "scale": 1
+  }
+}

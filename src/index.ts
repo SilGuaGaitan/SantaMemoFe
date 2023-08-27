@@ -1,19 +1,42 @@
-import { Application, Sprite } from 'pixi.js'
+import {Application, Assets } from 'pixi.js'
+import { assets } from './assets';
+import { Scene } from './Scene';
 
+
+export const WIDTH= 640;
+export const HEIGHT = 480;
 const app = new Application({
-	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
+	view:document.getElementById("pixi-canvas") as HTMLCanvasElement,
 	resolution: window.devicePixelRatio || 1,
 	autoDensity: true,
-	backgroundColor: 0x6495ed,
-	width: 640,
-	height: 480
+	backgroundColor: 0xFFFFFF,
+	width: WIDTH,
+	height: HEIGHT,
+
 });
+window.addEventListener("resize", ()=>{
+	console.log("resized");
+	const ScaleX= window.innerWidth/app.screen.width;
+	const ScaleY=window.innerHeight/app.screen.height;
+	const Scale=Math.min(ScaleX, ScaleY);
+	const gameWidth=Math.round(app.screen.width*Scale);
+	const gameHeight=Math.round(app.screen.height*Scale);
+	const marginHorizontal=Math.floor((window.innerWidth -gameWidth)/2)+"px";
+	const marginVertical=Math.floor((window.innerHeight-gameHeight)/2)+"px";
+	app.view.style!.width=gameWidth + "px";
+	app.view.style!.height=gameHeight +"px";
+	(app.view.style as any).marginLeft=marginHorizontal;
+	(app.view.style as any).marginRight=marginHorizontal;
+	(app.view.style as any).marginTopt=marginVertical;
+	(app.view.style as any).marginBottom=marginVertical;
+})
+window.dispatchEvent(new Event("resize"));
+Assets.addBundle("myAssets", assets);
+Assets.loadBundle(["myAssets"]).then(()=>{
+	const myScene =new Scene();
+	app.stage.addChild(myScene);
+ 	 //Ticker.shared.add(function(deltaFrame){
+	 //myScene.update(Ticker.shared.deltaMS,deltaFrame);
+  
+})
 
-const clampy: Sprite = Sprite.from("clampy.png");
-
-clampy.anchor.set(0.5);
-
-clampy.x = app.screen.width / 2;
-clampy.y = app.screen.height / 2;
-
-app.stage.addChild(clampy);

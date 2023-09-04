@@ -1,12 +1,15 @@
-import {Application, Assets } from 'pixi.js'
+import {Application, Assets } from 'pixi.js';
 import { assets } from './assets';
-import { Scene } from './Scene';
+import { Menu } from './pantalla/pantalla2';
+//import { Pantalla1 } from './pantalla/pantalla1';
+//import { Carta } from './carta';
 
 
 export const WIDTH= 640;
 export const HEIGHT = 480;
-const app = new Application({
-	view:document.getElementById("pixi-canvas") as HTMLCanvasElement,
+const app = new Application(
+	{
+	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
 	resolution: window.devicePixelRatio || 1,
 	autoDensity: true,
 	backgroundColor: 0xFFFFFF,
@@ -33,7 +36,7 @@ window.addEventListener("resize", ()=>{
 window.dispatchEvent(new Event("resize"));
 Assets.addBundle("myAssets", assets);
 Assets.loadBundle(["myAssets"]).then(()=>{
-	const myScene =new Scene();
+	const myScene =new Menu();
 	app.stage.addChild(myScene);
  	 //Ticker.shared.add(function(deltaFrame){
 	 //myScene.update(Ticker.shared.deltaMS,deltaFrame);

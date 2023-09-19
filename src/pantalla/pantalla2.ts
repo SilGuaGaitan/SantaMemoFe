@@ -5,6 +5,14 @@ export class Menu extends Container{
     constructor(){
         super();
         const bg= new Graphics();
+        bg.lineStyle(5,0x00F000);
+        bg.moveTo(0,0);
+        bg.beginFill(0x00F000,5);
+        bg.lineTo(300,0);
+        bg.lineTo(300,300);
+        bg.lineTo(0,300);
+        bg.lineTo(0,0);
+        bg.endFill();
         this.addChild(bg);
         const mn=new Text("MENU");
         mn.position.set(WIDTH /2,100);

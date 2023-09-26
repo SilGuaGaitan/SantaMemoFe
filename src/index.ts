@@ -1,6 +1,6 @@
 import {Application, Assets } from 'pixi.js';
 import { assets } from './assets';
-//import { Menu } from './pantalla/pantalla2';
+//import { Carta } from './Carta';
 import { Scene } from './game.ts/Scene';
 //import { Pantalla1 } from './pantalla/pantalla1';
 //import { Carta } from './carta';

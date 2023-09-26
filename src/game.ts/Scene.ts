@@ -28,19 +28,23 @@ export class Scene extends Container{
     }    
     private onCrearMazo():void{
         let mazo=["bicho","alfajor","brigadier"];
+        let copy=structuredClone(mazo);
+
         for (let i=mazo.length-1;i>0 ; i--)
            {
             let j=Math.floor(Math.random()*(i+1));
             let temp=mazo[i];
                 mazo[i]=mazo[j];
                 mazo[j]=temp;
-           }
-           
-           console.log(mazo);
-    }
+            }
+            let copy2=mazo.concat(copy);
+         
+        
+        console.log(copy2);   
+        }     
+   
 
 
-    
 }        
     /*private comparaCartas(carta1:string,carta2:string):void
     {

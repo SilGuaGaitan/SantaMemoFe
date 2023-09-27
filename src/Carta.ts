@@ -5,7 +5,7 @@ export class Carta extends Container{
     public back:Graphics;
     constructor(){
         super();
-        //this.card=card;
+      
         const contenedor=new Container()
         contenedor.position.x=100;
         contenedor.position.y=50;
@@ -36,17 +36,20 @@ export class Carta extends Container{
 
           
         }
-    private onMostrarCarta():void
-    { 
+    public onMostrarCarta():void
+    { let temp:string;
         console.log("carta clikeada");
         if(this.carta1.visible==true)
-        {
+        {  
             this.carta1.visible=false;
             this.back.visible=true;
             console.log("tapa carta");
         }
         else
         {
+            temp= String(this.carta1) ;
+            console.log("La carta es:  " + temp);
+
             this.carta1.visible= true;
             this.back.visible=false;
             console.log("muestra carta");

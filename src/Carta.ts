@@ -11,7 +11,7 @@ export class Carta extends Container{
         contenedor.position.y=50;
         this.addChild(contenedor);
 
-            this.carta1=  Sprite.from("bicho");
+            this.carta1=  Sprite.from("alfajor");
             this.carta1.scale.set(0.4);
             this.carta1.position.set(0,0);
             this.carta1.on("mousedown",this.onMostrarCarta,this);
@@ -47,7 +47,7 @@ export class Carta extends Container{
         }
         else
         {
-            temp= String(this.carta1) ;
+            temp= toString(carta1) ;
             console.log("La carta es:  " + temp);
 
             this.carta1.visible= true;

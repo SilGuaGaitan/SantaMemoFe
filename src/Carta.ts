@@ -47,7 +47,7 @@ export class Carta extends Container{
         }
         else
         {
-            temp= toString(carta1) ;
+            temp= this.carta1.name ;
             console.log("La carta es:  " + temp);
 
             this.carta1.visible= true;

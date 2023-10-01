@@ -1,7 +1,7 @@
 import {Application, Assets } from 'pixi.js';
 import { assets } from './assets';
-import { Carta } from './Carta';
-//import { Scene } from './game.ts/Scene';
+//import { Carta } from './Carta';
+import { Scene } from './game.ts/Scene';
 //import { Pantalla1 } from './pantalla/pantalla1';
 //import { Carta } from './carta';
 
@@ -37,7 +37,7 @@ window.addEventListener("resize", ()=>{
 window.dispatchEvent(new Event("resize"));
 Assets.addBundle("myAssets", assets);
 Assets.loadBundle(["myAssets"]).then(()=>{
-	const myScene =new Carta();
+	const myScene =new Scene();
 	app.stage.addChild(myScene);
  	 //Ticker.shared.add(function(deltaFrame){
 	 //myScene.update(Ticker.shared.deltaMS,deltaFrame);

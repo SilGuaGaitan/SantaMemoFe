@@ -6,8 +6,8 @@ import { Scene } from './game.ts/Scene';
 
 
 
-export const WIDTH= 1024;
-export const HEIGHT = 630;
+export const WIDTH= 640;
+export const HEIGHT = 480;
 const app = new Application(
 	{
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,

@@ -15,9 +15,19 @@ export class Scene extends Container{
             mazo.push(aux);
             const auxText= new Text(i,{fontSize:20});
             aux.addChild(auxText);  
-            
-       }
-       const copia= Array.from(mazo);
+        }
+        let copia:Array<Graphics> =[];
+    
+       for( let i=0; i< 20; i++){
+          const aux=new Graphics();
+            aux.beginFill(0xFFFFFF * Math.random());
+            aux.drawRect(0,0,50,50);
+            aux.endFill();
+            copia.push(aux);
+            const auxText= new Text(i,{fontSize:20});
+            aux.addChild(auxText);  
+        }
+       
        copia.sort(()=>Math.random()-0.5);
        mazo = mazo.concat(copia);
        this.addChild(...mazo);

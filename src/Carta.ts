@@ -1,18 +1,18 @@
-import { Container, Sprite, Graphics } from "pixi.js";
+import { Container, Graphics,Sprite } from "pixi.js";
 
 export class Carta extends Container{
-    public carta1:Sprite;
-    public back:Graphics;
-    constructor(){
+    private carta1: Sprite;
+    private back:Graphics;
+    constructor(def:Sprite){
         super();
       
         const contenedor=new Container()
         contenedor.position.x=100;
         contenedor.position.y=50;
         this.addChild(contenedor);
-
-            this.carta1=  Sprite.from("alfajor");
-            this.carta1.scale.set(0.4);
+       
+            this.carta1=  Sprite.from(def);
+            this.carta1.scale.set(0.3);
             this.carta1.position.set(0,0);
             this.carta1.on("mousedown",this.onMostrarCarta,this);
             this.carta1.interactive=true;
@@ -21,38 +21,32 @@ export class Carta extends Container{
 
            
             this.back =new Graphics();
-            this.back.lineStyle(5,0xB5B2B2);
-            this.back.moveTo(0,0);
-            this.back.beginFill(0xB5B2B2,5);
-            this.back.lineTo(120,0);
-            this.back.lineTo(120,120);
-            this.back.lineTo(0,120);
-            this.back.lineTo(0,0);
+            this.back.beginFill(0xFFFFFF * Math.random());
+            this.back.drawRect(0,0,50,50);
             this.back.endFill();
             this.back.on("mousedown",this.onMostrarCarta,this);
             this.back.interactive=true;
             this.back.visible=true;
-            contenedor.addChild(this.back);
+
+            this.addChild(this.back);
 
           
         }
     public onMostrarCarta():void
-    { let temp:string;
+    { let nombre:any;
         console.log("carta clikeada");
-        if(this.carta1.visible==true)
-        {  
-            this.carta1.visible=false;
-            this.back.visible=true;
-            console.log("tapa carta");
+        if(this.back.visible==true)
+        { 
+            this.carta1.visible=true;
+            nombre= this.carta1.name;
+            console.log("muestra carta "+" la carta es: "+ nombre);
+            this.back.visible=false;
         }
         else
         {
-            temp= this.carta1.name ;
-            console.log("La carta es:  " + temp);
-
-            this.carta1.visible= true;
-            this.back.visible=false;
-            console.log("muestra carta");
+            this.back.visible=true;
+            this.carta1.visible=false;
+            console.log("tapa carta");
         }
 
     }

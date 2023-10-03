@@ -1,13 +1,13 @@
 import {Application, Assets } from 'pixi.js';
 import { assets } from './assets';
-//import { Carta } from './Carta';
+
 import { Scene } from './game.ts/Scene';
-//import { Pantalla1 } from './pantalla/pantalla1';
-//import { Carta } from './carta';
+//import { Carta } from './Carta';
 
 
-export const WIDTH= 640;
-export const HEIGHT = 480;
+
+export const WIDTH= 1024;
+export const HEIGHT = 630;
 const app = new Application(
 	{
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,

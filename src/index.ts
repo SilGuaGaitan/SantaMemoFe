@@ -1,8 +1,8 @@
 import {Application, Assets } from 'pixi.js';
 import { assets } from './assets';
-
-import { Scene } from './game.ts/Scene';
 //import { Carta } from './Carta';
+import { Scene } from './game.ts/Scene';
+
 
 
 
@@ -33,7 +33,7 @@ window.addEventListener("resize", ()=>{
 	(app.view.style as any).marginRight=marginHorizontal;
 	(app.view.style as any).marginTopt=marginVertical;
 	(app.view.style as any).marginBottom=marginVertical;
-})
+});
 window.dispatchEvent(new Event("resize"));
 Assets.addBundle("myAssets", assets);
 Assets.loadBundle(["myAssets"]).then(()=>{

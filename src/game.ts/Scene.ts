@@ -1,31 +1,38 @@
-import { Container,Graphics,Text} from "pixi.js";
+import { Container,Sprite, Texture} from "pixi.js";
 
 
 export class Scene extends Container{
     constructor()
     {
        super();
-       let mazo:Array<Graphics> =[];
+       let mazo = [];
     
        for( let i=0; i< 20; i++){
-          const aux=new Graphics();
-            aux.beginFill(0xFFFFFF * Math.random());
-            aux.drawRect(0,0,50,50);
-            aux.endFill();
-            mazo.push(aux);
-            const auxText= new Text(i,{fontSize:20});
-            aux.addChild(auxText);  
+        const aux=  new Sprite(Texture.from("i.png"));
+        console.log(aux);
+        aux.scale.set(0.3);
+        aux.anchor.set(0.5);
+        aux.position.set(0,0);
+     //   aux.on("mousedown",this.onMostrarCarta,this);
+        aux.interactive=true;
+        aux.visible=false;
+        mazo.push(aux)
+        this.addChild(aux);
         }
-        let copia:Array<Graphics> =[];
+        let copia =[];
     
        for( let i=0; i< 20; i++){
-          const aux=new Graphics();
-            aux.beginFill(0xFFFFFF * Math.random());
-            aux.drawRect(0,0,50,50);
-            aux.endFill();
-            copia.push(aux);
-            const auxText= new Text(i,{fontSize:20});
-            aux.addChild(auxText);  
+        const aux=  new Sprite(Texture.from("i.png"));
+        console.log(aux);
+        aux.scale.set(0.3);
+        aux.anchor.set(0.5);
+        aux.position.set(0,0);
+       // aux.on("mousedown",this.onMostrarCarta,this);
+        aux.interactive=true;
+        aux.visible=false;
+        copia.push(aux)
+        this.addChild(aux);
+           
         }
        
        copia.sort(()=>Math.random()-0.5);
@@ -52,5 +59,27 @@ export class Scene extends Container{
             }
          
         }
+        public update()
+        {
+
+        }
+      /*  public onMostrarCarta():void
+        { let nombre:any;
+         console.log("carta clikeada");
+         if(this.back.visible==true)
+         { 
+             this.carta1.visible=true;
+             nombre= this.carta1.name;
+             console.log("muestra carta "+" la carta es: "+ nombre);
+             this.back.visible=false;
+         }
+         else
+         {
+             this.back.visible=true;
+             this.carta1.visible=false;
+             console.log("tapa carta");
+         }
+ 
+     }*/
     }
    

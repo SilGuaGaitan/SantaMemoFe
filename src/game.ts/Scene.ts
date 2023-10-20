@@ -16,7 +16,7 @@ export class Scene extends Container{
      //   aux.on("mousedown",this.onMostrarCarta,this);
         aux.interactive=true;
         aux.visible=false;
-        mazo.push(aux)
+        mazo.push(aux);
         this.addChild(aux);
         }
         let copia =[];
@@ -30,7 +30,7 @@ export class Scene extends Container{
        // aux.on("mousedown",this.onMostrarCarta,this);
         aux.interactive=true;
         aux.visible=false;
-        copia.push(aux)
+        copia.push(aux);
         this.addChild(aux);
            
         }
@@ -53,6 +53,7 @@ export class Scene extends Container{
                     mazo[count].y = 10 + i * (mazo[count].width + 10);
                     mazo[count].x = 10 + j * (mazo[count].height + 10);
                     count++;
+                    console.log(count);
                 }
              
             }

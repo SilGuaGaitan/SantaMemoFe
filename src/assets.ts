@@ -20,6 +20,8 @@ export const assets ={
     17:"./imgsantafe/17.png",
     18:"./imgsantafe/18.png",
     19:"./imgsantafe/19.png",
-    santa:"./imgsantafe/santafe.jpg"
+    santa:"./imgsantafe/santafe.jpg",
+    botonok:"./imgsantafe/boton-ok.png",
+    back:"./imgsantafe/back.jpg"
 }
 

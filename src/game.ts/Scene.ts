@@ -8,28 +8,30 @@ export class Scene extends Container{
        let mazo = [];
     
        for( let i=0; i< 20; i++){
-        const aux=  new Sprite(Texture.from("i.png"));
+        const aux=  new Sprite(Texture.from(String(i)));
         console.log(aux);
-        aux.scale.set(0.3);
+        aux.height=50;
+        aux.width=50;
         aux.anchor.set(0.5);
         aux.position.set(0,0);
      //   aux.on("mousedown",this.onMostrarCarta,this);
         aux.interactive=true;
-        aux.visible=false;
+        aux.visible=true;
         mazo.push(aux);
         this.addChild(aux);
         }
         let copia =[];
     
        for( let i=0; i< 20; i++){
-        const aux=  new Sprite(Texture.from("i.png"));
+        const aux=  new Sprite(Texture.from(String(i)));
         console.log(aux);
-        aux.scale.set(0.3);
+        aux.height=50;
+        aux.width=50;
         aux.anchor.set(0.5);
         aux.position.set(0,0);
        // aux.on("mousedown",this.onMostrarCarta,this);
         aux.interactive=true;
-        aux.visible=false;
+        aux.visible=true;
         copia.push(aux);
         this.addChild(aux);
            
@@ -50,8 +52,8 @@ export class Scene extends Container{
         for(let i=0; i < columnas; i++){
             for (let j=0; j < filas; j++){
                 if (count< totalElemen){
-                    mazo[count].y = 10 + i * (mazo[count].width + 10);
-                    mazo[count].x = 10 + j * (mazo[count].height + 10);
+                    mazo[count].y = 100 + i * (mazo[count].width + 10);
+                    mazo[count].x = 100 + j * (mazo[count].height + 10);
                     count++;
                     console.log(count);
                 }

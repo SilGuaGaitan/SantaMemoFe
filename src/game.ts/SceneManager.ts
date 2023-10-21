@@ -3,8 +3,8 @@ import { SceneBase } from "../game.ts/SceneBase";
 
 
 export namespace SceneManager{
-    export const WIDTH=640;
-    export const HEIGHT=480;
+    export const WIDTH=1280;
+    export const HEIGHT=720;
     let currentScene: SceneBase;
     let app:Application;
 

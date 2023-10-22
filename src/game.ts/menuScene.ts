@@ -12,7 +12,7 @@ export class MenuScene extends SceneBase {
         const WIDTH=1280;
         const HEIGHT=720;
         const bg= Sprite.from("santafe");
-        bg.scale.set(1.5);
+        bg.scale.set(2.5);
         this.addChild(bg);
         const tstyle= new TextStyle({
             align: "center",
@@ -24,7 +24,7 @@ export class MenuScene extends SceneBase {
             ],
             fillGradientType: 1,
             fontFamily: "Arial Black",
-            fontSize: 55,
+            fontSize: 80,
             fontWeight: "bold",
             lineJoin: "round",
             stroke: "#f7f3f3",
@@ -33,17 +33,16 @@ export class MenuScene extends SceneBase {
 
         const texto= new Text("Santa MEMO Fe",tstyle);
         texto.anchor.set(0.5);
-        texto.position.set(WIDTH/2,HEIGHT/2);
+        texto.position.set(WIDTH/2, HEIGHT/2);
         texto.scale.set(1);
-       
-
+    
         this.addChild(texto);
 
         const btnini= new Graphics();
         btnini.beginFill(0xffffff,5);
         btnini.drawRect(0,0,110,50);
         btnini.endFill();
-        btnini.position.set(500,400);
+        btnini.position.set(1100,600);
         const textini = new Text("Comenzar",{ fontFamily: "Arial Black",fontSize:20, align: "center" });
         btnini.addChild(textini);
         btnini.on("mousedown",this.goToGame, this);
@@ -54,7 +53,7 @@ export class MenuScene extends SceneBase {
         btnsalir.beginFill(0xffffff,5);
         btnsalir.drawRect(0,0,70,50);
         btnsalir.endFill();
-        btnsalir.position.set(70,400);
+        btnsalir.position.set(70,600);
         const textsalir = new Text("Salir",{ fontFamily: "Arial Black",fontSize:20, align:"center" });
         btnsalir.addChild(textsalir);
         btnsalir.on("mousedown",this.goToGame, this);

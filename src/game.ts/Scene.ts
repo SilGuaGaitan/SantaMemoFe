@@ -1,4 +1,5 @@
-import { Container,Sprite, Texture} from "pixi.js";
+import { Container} from "pixi.js";
+import { Card } from "./Card";
 
 
 export class Scene extends Container{
@@ -8,28 +9,25 @@ export class Scene extends Container{
        let mazo = [];
     
        for( let i=0; i< 20; i++){
-        const aux=  new Sprite(Texture.from(String(i)));
+        const aux=  new Card(String(i));
         console.log(aux);
-        aux.height=50;
-        aux.width=50;
-        aux.anchor.set(0.5);
+        aux.height=130;
+        aux.width=130;
         aux.position.set(0,0);
-     //   aux.on("mousedown",this.onMostrarCarta,this);
         aux.interactive=true;
         aux.visible=true;
+        
         mazo.push(aux);
         this.addChild(aux);
         }
         let copia =[];
     
        for( let i=0; i< 20; i++){
-        const aux=  new Sprite(Texture.from(String(i)));
+        const aux=  new Card(String(i));
         console.log(aux);
-        aux.height=50;
-        aux.width=50;
-        aux.anchor.set(0.5);
+        aux.height=130;
+        aux.width=130;
         aux.position.set(0,0);
-       // aux.on("mousedown",this.onMostrarCarta,this);
         aux.interactive=true;
         aux.visible=true;
         copia.push(aux);
@@ -44,8 +42,8 @@ export class Scene extends Container{
        const totalElemen = mazo.length;
 
         console.log(totalElemen);
-        const filas=Math.floor(Math.sqrt(totalElemen));
-        const columnas= Math.ceil(totalElemen / filas);
+        const filas=/*Math.floor(Math.sqrt(totalElemen))*/8;
+        const columnas= /*Math.ceil(totalElemen / filas)*/5;
         console.log(filas,columnas);
 
         let count=0;

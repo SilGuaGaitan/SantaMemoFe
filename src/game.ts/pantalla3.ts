@@ -1,8 +1,8 @@
 import { Container,Graphics, Text } from "pixi.js";
 
 
-export class Ganar extends Container{
-    constructor(){
+export class Perder extends Container{
+    constructor( puntaje:String){
         super();
         const bg= new Graphics();
          bg.beginFill(0x00CCFF,1);
@@ -10,7 +10,7 @@ export class Ganar extends Container{
          bg.endFill();
          bg.position.set(20,40);
          this.addChild(bg);
-         const text=new Text("GANASTE!!!",{fontFamily: "Arial Black",fontSize:50, align: "center"});
+         const text=new Text("Perdiste \nPuntaje: "+ puntaje,{fontFamily: "Arial Black",fontSize:50, align: "center"});
          text.position.set(110,150);
          bg.addChild(text);
 
@@ -33,5 +33,9 @@ export class Ganar extends Container{
         this.addChild(btnsalir);
 
 
+    }
+    public update()
+    {
+        
     }
 }        

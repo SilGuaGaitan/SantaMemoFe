@@ -40,7 +40,7 @@ export class MenuScene extends SceneBase {
     
         this.addChild(texto);
 
-        const btnsalir = new Boton("Fullscreen");
+        const btnsalir = new Boton("Pantalla Completa");
         btnsalir.position.set(500, 500);
         btnsalir.on("pointerup", () => {
             if (!document.fullscreenElement) {
@@ -60,6 +60,15 @@ export class MenuScene extends SceneBase {
         btnini.position.set(750, 500);
         btnini.on("pointerup", this.goToGame, this);
         this.addChild(btnini);
+      
+        const style = new TextStyle({
+            fill: "#fafafa",
+            fontSize: 20,
+            stroke: "#3d4aae"
+        });
+        const text0 = new Text('Silvina    Gaitan   2023\nAgradezco  a The Rabbit Hole  y a  Capital  Activa, \nMunicipalidad de  Santa Fe  por  el apoyo  para  realizar  este  juego', style);
+        text0.position.set(500, 600);
+        this.addChild(text0);
     }
     private goToGame() {
         setTimeout(() => {

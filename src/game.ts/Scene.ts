@@ -4,7 +4,6 @@ import { MenuScene } from "./menuScene";
 import { SceneManager } from "./SceneManager";
 import { Boton } from "./Boton";
 import { Ganar } from "./pantalla2";
-import { Perder } from "./pantalla3";
 import { sound } from "@pixi/sound";
 
 
@@ -58,13 +57,13 @@ export class Scene extends Container{
         aux.cursor = "pointer";
         copia.push(aux);
         }
-       mazo = mazo.concat(copia);
-       mazo.sort(()=>Math.random()-0.5);
-       this.addChild(...mazo);
+        mazo = mazo.concat(copia);
+        mazo.sort(()=>Math.random()-0.5);
+        this.addChild(...mazo);
 
-       const totalElemen = mazo.length;
-       const filas=8;
-       const columnas=5;
+        const totalElemen = mazo.length;
+        const filas=8;
+        const columnas=5;
      
         let count=0;
         for(let i=0; i < columnas; i++){
@@ -116,8 +115,7 @@ export class Scene extends Container{
                         this.puntajeContador += 1;
                         this.puntaje.text = "Puntaje:\n" + String(this.puntajeContador);
                         if(this.puntajeContador > 19){
-                          
-                            SceneManager.changeScene(new Ganar(String(this.puntajeContador)));
+                            SceneManager.changeScene(new Ganar("GANASTE!!! 🥳\nPuntaje: "+String(this.puntajeContador)));
                         }
                     } 
                     else
@@ -132,7 +130,7 @@ export class Scene extends Container{
 
                         if(this.intentosContador < 1){
                            
-                            SceneManager.changeScene(new Perder(String(this.puntajeContador)));
+                            SceneManager.changeScene(new Ganar("Perdiste 😢\nPuntaje: "+String(this.puntajeContador)));
                         }
                     }
                     this.queTurnoEs = "1";

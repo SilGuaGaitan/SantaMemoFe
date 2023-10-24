@@ -1,4 +1,7 @@
 import { Container,Graphics, Text } from "pixi.js";
+import { SceneManager } from "./SceneManager";
+import { Boton } from "./Boton";
+import { MenuScene } from "./menuScene";
 
 
 export class Perder extends Container{
@@ -6,32 +9,19 @@ export class Perder extends Container{
         super();
         const bg= new Graphics();
          bg.beginFill(0x00CCFF,1);
-         bg.drawRect(0,0,600,400);
+         bg.drawRect(0,0,SceneManager.WIDTH,SceneManager.HEIGHT);
          bg.endFill();
-         bg.position.set(20,40);
+         bg.position.set(0,0);
          this.addChild(bg);
          const text=new Text("Perdiste \nPuntaje: "+ puntaje,{fontFamily: "Arial Black",fontSize:50, align: "center"});
-         text.position.set(110,150);
+         text.position.set(SceneManager.WIDTH/2,SceneManager.HEIGHT/2);
          bg.addChild(text);
 
-        const btnini= new Graphics();
-        btnini.beginFill(0xffffff,5);
-        btnini.drawRect(0,0,90,50);
-        btnini.endFill();
-        btnini.position.set(70,380);
-        const textini = new Text("Volver",{ fontFamily: "Arial Black",fontSize:20, align: "center" });
-        btnini.addChild(textini);
-        this.addChild(btnini);
-
-        const btnsalir= new Graphics();
-        btnsalir.beginFill(0xffffff,5);
-        btnsalir.drawRect(0,0,70,50);
-        btnsalir.endFill();
-        btnsalir.position.set(500,380);
-        const textsalir = new Text("Salir",{ fontFamily: "Arial Black",fontSize:20, align:"center" });
-        btnsalir.addChild(textsalir);
-        this.addChild(btnsalir);
-
+         const btnsalir = new Boton("Salir");
+         btnsalir.position.set(1200, 100);
+         btnsalir.scale.set(0.8);
+         btnsalir.on("pointerup", (() => { SceneManager.changeScene(new MenuScene) }));
+         this.addChild(btnsalir);
 
     }
     public update()

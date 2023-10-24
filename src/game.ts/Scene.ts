@@ -5,6 +5,7 @@ import { SceneManager } from "./SceneManager";
 import { Boton } from "./Boton";
 import { Ganar } from "./pantalla2";
 import { Perder } from "./pantalla3";
+import { sound } from "@pixi/sound";
 
 
 export class Scene extends Container{
@@ -18,21 +19,22 @@ export class Scene extends Container{
     constructor()
     {
        super();
+
        const btnsalir = new Boton("Salir");
-       btnsalir.position.set(1200, 40);
+       btnsalir.position.set(1200, 100);
        btnsalir.scale.set(0.8);
        btnsalir.on("pointerup", (() => { SceneManager.changeScene(new MenuScene) }));
        this.addChild(btnsalir);
 
-       this.puntaje = new Text("Puntaje:\n0", { align: "center", fontSize: 28 })
+       this.puntaje = new Text("Puntaje:\n0", { align: "center", fontSize: 28 });
        this.puntaje.anchor.set(0.5);
-       this.puntaje.position.set(1200, 150)
-       this.addChild(this.puntaje)
+       this.puntaje.position.set(1200, 200);
+       this.addChild(this.puntaje);
 
-       this.intentos = new Text("Intentos:\n"+String(this.intentosContador), { align: "center", fontSize: 28 })
+       this.intentos = new Text("Intentos:\n"+String(this.intentosContador), { align: "center", fontSize: 28 });
        this.intentos.anchor.set(0.5);
-       this.intentos.position.set(1200, 250)
-       this.addChild(this.intentos)
+       this.intentos.position.set(1200, 400);
+       this.addChild(this.intentos);
        let mazo = [];
     
        for( let i=0; i< 20; i++){
@@ -68,8 +70,8 @@ export class Scene extends Container{
         for(let i=0; i < columnas; i++){
             for (let j=0; j < filas; j++){
                 if (count< totalElemen){
-                    mazo[count].y = 100 + i * (mazo[count].width + 10);
-                    mazo[count].x = 100 + j * (mazo[count].height + 10);
+                    mazo[count].y = 80 + i * (mazo[count].width + 10);
+                    mazo[count].x = 80 + j * (mazo[count].height + 10);
                     count++;
                     console.log(count);
                 }
@@ -81,6 +83,14 @@ export class Scene extends Container{
         public update()
         {
 
+        }
+        public fiesta()
+        {
+            sound.play("fiesta");
+        }
+        public error()
+        {
+            sound.play("boing");
         }
         public turno(carta: Card) {
 
@@ -98,9 +108,10 @@ export class Scene extends Container{
     
                 setTimeout(() => {
                    
-                    if (this.carta1.queCartaEs == this.carta2.queCartaEs) {
+                    if (this.carta1.quecarta == this.carta2.quecarta) {
                         this.removeChild(this.carta1);
                         this.removeChild(this.carta2);
+                        this.fiesta();
                        
                         this.puntajeContador += 1;
                         this.puntaje.text = "Puntaje:\n" + String(this.puntajeContador);
@@ -108,17 +119,19 @@ export class Scene extends Container{
                           
                             SceneManager.changeScene(new Ganar(String(this.puntajeContador)));
                         }
-                    } else {
-                        // si son distintas las giramos nuevamente
-                        this.carta1?.darVuelta();
-                        this.carta2?.darVuelta();
-                        // y restamos 1 intento
+                    } 
+                    else
+                    {
+                        this.carta1?.mostrarCarta();
+                        this.carta2?.mostrarCarta();
+                        this.error();
                         this.intentosContador -= 1;
                         this.intentos.text = "Intentos:\n" + String(this.intentosContador);
-                        this.carta1.interactive = true; // devuelve interactividad a carta1
-                        this.carta2.interactive = true; // devuelve interactividad a carta2
+                        this.carta1.interactive = true; 
+                        this.carta2.interactive = true;
+
                         if(this.intentosContador < 1){
-                            // si no hay más intentos: pantalla PERDISTE
+                           
                             SceneManager.changeScene(new Perder(String(this.puntajeContador)));
                         }
                     }

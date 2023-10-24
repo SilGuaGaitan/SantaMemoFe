@@ -21,7 +21,9 @@ export const assets ={
     18:"./imgsantafe/18.png",
     19:"./imgsantafe/19.png",
     santa:"./imgsantafe/santafe.jpg",
-    botonok:"./imgsantafe/boton-ok.png",
-    back:"./imgsantafe/back.jpg"
+    back:"./imgsantafe/back.jpg",
+    boing:"./Sonidos/boing.mp3",
+    carta:"./Sonidos/carta.mp3",
+    fiesta:"./Sonidos/fiesta.mp3"
 }
 

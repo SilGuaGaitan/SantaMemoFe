@@ -9,20 +9,18 @@ export class Ganar extends Container{
         super();
         const bg= new Graphics();
          bg.beginFill(0x00CCFF,1);
-         bg.drawRect(0,0,600,400);
+         bg.drawRect(0,0,SceneManager.WIDTH,SceneManager.HEIGHT);
          bg.endFill();
-         bg.position.set(20,40);
+         bg.position.set(0,0);
          this.addChild(bg);
          const text=new Text("GANASTE!!! \nPuntaje: "+ puntaje,{fontFamily: "Arial Black",fontSize:50, align: "center"});
-         text.position.set(110,150);
+         text.position.set(SceneManager.WIDTH/2,SceneManager.HEIGHT/2);
          bg.addChild(text);
 
-        const btnini= new Boton("Volver");
-        
-        this.addChild(btnini);
+       
 
         const btnsalir = new Boton("Salir");
-        btnsalir.position.set(1200, 40);
+        btnsalir.position.set(1200, 100);
         btnsalir.scale.set(0.8);
         btnsalir.on("pointerup", (() => { SceneManager.changeScene(new MenuScene) }));
         this.addChild(btnsalir);

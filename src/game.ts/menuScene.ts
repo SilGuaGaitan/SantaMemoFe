@@ -40,7 +40,7 @@ export class MenuScene extends SceneBase {
     
         this.addChild(texto);
 
-        const btnsalir = new Boton("Pantalla Completa");
+        const btnsalir = new Boton("Full Screen");
         btnsalir.position.set(500, 500);
         btnsalir.on("pointerup", () => {
             if (!document.fullscreenElement) {

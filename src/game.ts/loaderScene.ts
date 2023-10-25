@@ -32,10 +32,7 @@ export class loaderScene extends Container implements SceneBase {
         this.loaderBar.position.y = (SceneManager.HEIGHT - this.loaderBar.height) / 2;
         this.addChild(this.loaderBar);
 
-       /* this.texty = new Text("CARGANDO", { fontSize: 30, fill: 0xFFFFFF });
-        this.texty.anchor.set(0.5);
-        this.texty.position.set(SceneManager.WIDTH / 2, SceneManager.HEIGHT / 2);
-        this.addChild(this.texty)*/
+
 
         this.initializeLoader().then(() => {
             this.gameLoaded();
